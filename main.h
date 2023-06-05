@@ -15,6 +15,24 @@
 #define F_HASH 8
 #define F_SPACE 16
 
+#define UNUSED(x) (void)(x)
+#define BUFF_SIZE 1024
+
+//fmt - the format
+//fn - the function associated
+
+struct fmt
+{
+    char fmt;
+    int (*fn)(va_list, char[], int, int, int ,int);
+};
+
+typedef struct fmt fmt_t;
+
+int _printf(const char *format, ...);
+int handle_print(const char *fmt, int *i, va_list, char buffer[],
+int flags, int width, int precision, int size);
+
 /*Functions to handle specifiers*/
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
