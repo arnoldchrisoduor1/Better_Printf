@@ -108,6 +108,7 @@ int prec, int length, char padd, char extra_c)
             write(1, &buffer[ind], length-(1 - padd_start)));
         }
     }
+    //extra verifications
     if(extra_c){
         buffer[--ind] = extra_c;
     }
