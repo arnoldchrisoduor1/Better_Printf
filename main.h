@@ -33,6 +33,14 @@ int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i, va_list, char buffer[],
 int flags, int width, int precision, int size);
 
+//Functions to print chars and strings
+int print_char(va_list types, char buffer[], int flags, int width,
+int precision, int size);
+int print_string(va_list types, char buffer[], int flags,
+int width, int precision, int size);
+int print_percentage(va_list types, char buffer[], int flags, int width,
+int precision, int size);
+
 /*Functions to handle specifiers*/
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
